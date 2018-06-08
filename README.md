@@ -9,9 +9,9 @@ Header参数:
 
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
-|appId|应用唯一标识|String|Y|蜜估提供|
-|timestamp|时间戳|String|Y|时区GMT+8以秒为单位的时间戳|
-|signature|签名|String|Y|-|
+|appId|应用唯一标识|varchar(32)|Y|蜜估提供|
+|timestamp|时间戳|number(11)|Y|时区GMT+8以秒为单位的时间戳|
+|signature|签名|varchar(32)|Y| - |
 
 签名算法:
  2. 把所有参数（包括appId、secret、timestamp）的key和拼成字符串放入到数组，得到 array = ['key2=value2','key1=value1']
@@ -52,10 +52,11 @@ Header参数:
 接口：${api_domain}/api/recycle/proxy/category/list/v1
 请求参数：无
 响应参数:
+
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
-|id|品类Id|String|Y|-|
-|name|品类名称|String|Y|-|
+|id|品类Id|varchar(32)|Y| - |
+|name|品类名称|varchar(32)|Y| - |
 
 响应示例
 ```
@@ -83,16 +84,16 @@ Header参数:
 响应参数:
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
-|id|品牌Id|String|Y|-|
-|name|品牌名称|String|Y|-|
-|listproduct|该品牌下的所有机型|List|Y|-|
+|id|品牌Id|varchar(32)|Y| - |
+|name|品牌名称|varchar(20)|Y| - |
+|listproduct|该品牌下的所有机型|[{}]|Y| - |
 
 ####listproduct
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
-|id|产品Id|String|Y|-|
-|name|产品名称|String|Y|-|
-|image|产品图片链接|String|Y|-|
+|id|产品Id|varchar(32)|Y| - |
+|name|产品名称|varchar(20)|Y| - |
+|image|产品图片链接|varchar(100)|Y| - |
 
 响应示例:
 ```
@@ -112,20 +113,20 @@ Header参数:
 请求方式:get
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
-|id|属性Id|String|Y|-|
-|name|属性名称|String|Y|-|
-|multi|是否多选|Boolean|Y|-|
-|rqd|是否必选|Boolean|N|-|
-|parentId|父级|String|N|-|
-|listOptions|属性值|List|Y|-|
+|id|属性Id|varchar(32)|Y| - |
+|name|属性名称|varchar(32)|Y| - |
+|multi|是否多选|bool|Y| - |
+|rqd|是否必选|bool|N| - |
+|parentId|父级|varchar(32)|N| - |
+|listOptions|属性值|[{}]|Y| - |
 
 ####listOptions
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
-|id|属性值Id|String|Y|-|
-|name|属性值名称|String|Y|-|
-|dft|是否默认选中|Boolean|Y|-|
-|parentId|属性值父级|String|Y|-|
+|id|属性值Id|varchar(32)|Y| - |
+|name|属性值名称|varchar(32)|Y| - |
+|dft|是否默认选中|bool|Y| - |
+|parentId|属性值父级|varchar(32)|Y| - |
 |extend|扩展信息|Map|Y|目前在笔记本估价专用|
 
 响应示例
@@ -152,16 +153,16 @@ Header参数:
 请求参数:
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
-|categoryId|品类Id|String|Y|-|
-|brandId|品牌Id|String|Y|-|
-|productId|产品Id|String|Y|-|
-|businessPropList|属性与属性值信息|List|Y|-|
+|categoryId|品类Id|varchar(32)|Y| - |
+|brandId|品牌Id|varchar(32)|Y| - |
+|productId|产品Id|varchar(32)|Y| - |
+|businessPropList|属性与属性值信息|[{}]|Y| - |
 
 ####businessPropList
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
-|propId|属性Id|String|Y|-|
-|optionId|属性值Id|String[]|Y|-|
+|propId|属性Id|varchar(32)|Y| - |
+|optionId|属性值Id|[]|Y| - |
 |extend|扩展信息|Map|N|目前在笔记本估价专用|
 
 请求示例:
@@ -206,24 +207,24 @@ Header参数:
 响应参数:
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
-|price|估价价格|Long|Y|单位:分| |
-|categoryId|品类Id|String|Y|-|
-|categoryName|品类名称|String|Y|-|
-|brandId|品类Id|String|Y|-|
-|brandName|品类名称|String|Y|-|
-|productId|产品Id|String|Y|-|
-|productName|产品名称|String|Y|-|
-|productImg|产品图片链接|String|Y|-|
-|valuingPropList|估价的属性|List|Y|-|
+|price|估价价格|Long|Y| 单位:分 |
+|categoryId|品类Id|varchar(32)|Y| - |
+|categoryName|品类名称|varchar(32)|Y| - |
+|brandId|品类Id|varchar(32)|Y| - |
+|brandName|品类名称|varchar(32)|Y| - |
+|productId|产品Id|varchar(32)|Y| - |
+|productName|产品名称|varchar(32)|Y| - |
+|productImg|产品图片链接|varchar(32)|Y| - |
+|valuingPropList|估价的属性|List|Y| - |
 
 ####valuingPropList
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
 |propId|属性Id|Long|Y|单位:分|
-|prop|属性名称|String|Y||
-|multi|是否多选|String|Y||
-|optionId|属性值|String[]|Y||
-|option|属性值名称|String[]|Y|| 
+|prop|属性名称|varchar(32)|Y| - |
+|multi|是否多选|varchar(32)|Y| - |
+|optionId|属性值|[]|Y| - |
+|option|属性值名称|[]|Y| - | 
 |extend|扩展信息|Map|N|目前在笔记本估价专用| 
 
 响应示例:
