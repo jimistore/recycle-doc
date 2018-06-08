@@ -76,7 +76,7 @@ Header参数:
 		"name": "数码/手表"
 	}]
 }
-```
+``` 
 
 ### 3.2品牌机型接口
 接口：https://migu.jimistore.com/api/model/{品类Id}
