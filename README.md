@@ -32,6 +32,7 @@ Header参数:
   "age":""
 }
 ```
+
 ### 2.3响应
  - 消息格式:application/json
  - 消息编发:UTF-8
@@ -45,6 +46,7 @@ Header参数:
   }
 }
 ```
+
 ## 3接口列表
 ### 3.1获取品类接口
 接口：${api_domain}/api/recycle/proxy/category/list/v1
@@ -74,6 +76,7 @@ Header参数:
 	}]
 }
 ```
+
 ### 3.2品牌机型接口
 接口：https://migu.jimistore.com/api/model/{品类Id}
 请求方式：get
@@ -142,6 +145,7 @@ Header参数:
 	}]
 }]
 ```
+
 ### 3.4估价
 接口：${api_domain}/api/recycle/proxy/valuing/v1?_=1528278727351
 请求方式：post
