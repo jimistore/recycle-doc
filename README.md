@@ -1,6 +1,6 @@
-# 提供给第三方
+# 回收估价模型接口文档
 
-标签 ： 提供给第三方蜜估接口
+标签 ： 
 
 ---
 #1.蜜估相关估价接口
@@ -20,32 +20,31 @@ Header参数:
  4. 根据step3得到的source生成MD5加密值，并转成大写，生成签名。sign=toUpperCase(Md5(source))
 
 ###1.2请求约定
- - ${api_domain} = recycle-api.jimistore.com
  - 接口协议:https
  - 请求方式:post
  - 消息格式:application/json
  - 消息编码:UTF-8
 
 请求参数样例
-
-    {
-      "id":"",
-      "age":""
-    }
-
+```
+{
+  "id":"",
+  "age":""
+}
+```
 ###1.3响应
  - 消息格式:application/json
  - 消息编发:UTF-8
 
 成功响应参数结构:
-
-    {
-      "code":"200",
-      "data":{
-         "age":"12"
-      }
-    }
-
+```
+{
+  "code":"200",
+  "data":{
+     "age":"12"
+  }
+}
+```
 ###1.4获取品类接口
 接口：${api_domain}/api/recycle/proxy/category/list/v1
 请求参数：无
@@ -55,24 +54,24 @@ Header参数:
 |id|品类Id|String|Y|-|
 |name|品类名称|String|Y|-|
 响应示例
-
-    {
-	    "code": "200",
-    	"data": [{
-    		"id": "yihuigou_1",
-    		"name": "手机"
-    	}, {
-    		"id": "yihuigou_2",
-    		"name": "平板"
-    	}, {
-    		"id": "yihuigou_3",
-    		"name": "笔记本"
-    	}, {
-    		"id": "yihuigou_5",
-    		"name": "数码/手表"
-    	}]
-    }
-
+```
+{
+    "code": "200",
+	"data": [{
+		"id": "yihuigou_1",
+		"name": "手机"
+	}, {
+		"id": "yihuigou_2",
+		"name": "平板"
+	}, {
+		"id": "yihuigou_3",
+		"name": "笔记本"
+	}, {
+		"id": "yihuigou_5",
+		"name": "数码/手表"
+	}]
+}
+```
 ###1.5品牌机型接口
 接口：https://migu.jimistore.com/api/model/{品类Id}
 请求方式：get
@@ -90,17 +89,17 @@ Header参数:
 |name|产品名称|String|Y|-|
 |image|产品图片链接|String|Y|-|
 响应示例:
-
-    [{
-        "id": "1_21",
-        "name": "诺基亚",
-        "listproduct": [{
-        	"id": "5190",
-        	"name": "诺基亚 6（TA-1000/全网通/64G）",
-        	"image": "http://www.ehuigou.com/Public/Uploads/pic/phone/nokia_6.jpg"
-        }]
-	}]
-
+```
+[{
+    "id": "1_21",
+    "name": "诺基亚",
+    "listproduct": [{
+    	"id": "5190",
+    	"name": "诺基亚 6（TA-1000/全网通/64G）",
+    	"image": "http://www.ehuigou.com/Public/Uploads/pic/phone/nokia_6.jpg"
+    }]
+}]
+```
 
 ###1.6产品属性与属性值接口
 接口：https://migu.jimistore.com/api/model/product/{产品Id}
@@ -122,8 +121,8 @@ Header参数:
 |parentId|属性值父级|String|Y|-|
 |extend|扩展信息|Map|Y|目前在笔记本估价专用||
 响应示例
-
-    [{
+```
+[{
 	"id": "1001069",
 	"name": "购买渠道",
 	"multi": false,
@@ -137,6 +136,7 @@ Header参数:
 		"dft": false
 	}]
 }]
+```
 ###1.7估价
 接口：${api_domain}/api/recycle/proxy/valuing/v1?_=1528278727351
 请求方式：post
@@ -154,8 +154,8 @@ Header参数:
 |optionId|属性值Id|String[]|Y|-|
 |extend|扩展信息|Map|N|目前在笔记本估价专用|
 请求示例:
-
-    {
+```
+{
 	"categoryId": "yihuigou_3",
 	"brandId": "3_1",
 	"productId": "5262",
@@ -191,6 +191,7 @@ Header参数:
 		"optionId": ["16925"]
 	}]
 }
+```
 响应参数:
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
@@ -213,57 +214,54 @@ Header参数:
 |option|属性值名称|String[]|Y|| 
 |extend|扩展信息|Map|N|目前在笔记本估价专用| 
 响应示例:
-
-     {
-        "categoryId": "yihuigou_3",
-        "brandId": "3_1",
-        "productId": "5262",
-        "businessPropList": [{
-        	"propId": "5262_ConfModel",
-        	"optionId": ["124"],
-        	"optionName": ["（MLH32CH/A）"],
-        	"multi": false,
-        	"extend": {
-        		"confMemory": "16GB（16GB×1）",
-        		"confConfig": 1,
-        		"confModel": "苹果 2016年 新款Macbook Pro 15英寸（MLH32CH/A）",
-        		"confHarddisk": "256GB",
-        		"confColor": "镁铝合金，银色，深空灰色",
-        		"confCamera": "720p FaceTime HD摄像头",
-        		"confProce": "Intel 酷睿i7 6700HQ",
-        		"confScreen": "15.4英寸",
-        		"confCard": "双显卡（入门级独立显卡＋集成显卡）",
-        		"confDrive": "无内置光驱"
-        	}
-        }, {
-        	"propId": "6055",
-        	"optionId": ["16928"],
-        	"optionName": ["开机运行正常"],
-        	"multi": false
-        }, {
-        	"propId": "6056",
-        	"optionId": ["16930"],
-        	"optionName": ["外壳完好"],
-        	"multi": false
-        }, {
-        	"propId": "6057",
-        	"optionId": ["16931"],
-        	"optionName": ["屏幕外观完好"],
-        	"multi": false
-        }, {
-        	"propId": "6058",
-        	"optionId": ["16932"],
-        	"optionName": ["屏幕显示正常"],
-        	"multi": false
-        }, {
-        	"propId": "6059",
-        	"optionId": ["16925"],
-        	"optionName": ["键盘外观/功能异常"],
-        	"multi": true
-        }],
-        "channelId": "h5"
-        }
-
-
-
-
+```
+ {
+    "categoryId": "yihuigou_3",
+    "brandId": "3_1",
+    "productId": "5262",
+    "businessPropList": [{
+    	"propId": "5262_ConfModel",
+    	"optionId": ["124"],
+    	"optionName": ["（MLH32CH/A）"],
+    	"multi": false,
+    	"extend": {
+    		"confMemory": "16GB（16GB×1）",
+    		"confConfig": 1,
+    		"confModel": "苹果 2016年 新款Macbook Pro 15英寸（MLH32CH/A）",
+    		"confHarddisk": "256GB",
+    		"confColor": "镁铝合金，银色，深空灰色",
+    		"confCamera": "720p FaceTime HD摄像头",
+    		"confProce": "Intel 酷睿i7 6700HQ",
+    		"confScreen": "15.4英寸",
+    		"confCard": "双显卡（入门级独立显卡＋集成显卡）",
+    		"confDrive": "无内置光驱"
+    	}
+    }, {
+    	"propId": "6055",
+    	"optionId": ["16928"],
+    	"optionName": ["开机运行正常"],
+    	"multi": false
+    }, {
+    	"propId": "6056",
+    	"optionId": ["16930"],
+    	"optionName": ["外壳完好"],
+    	"multi": false
+    }, {
+    	"propId": "6057",
+    	"optionId": ["16931"],
+    	"optionName": ["屏幕外观完好"],
+    	"multi": false
+    }, {
+    	"propId": "6058",
+    	"optionId": ["16932"],
+    	"optionName": ["屏幕显示正常"],
+    	"multi": false
+    }, {
+    	"propId": "6059",
+    	"optionId": ["16925"],
+    	"optionName": ["键盘外观/功能异常"],
+    	"multi": true
+    }],
+    "channelId": "h5"
+    }
+```
