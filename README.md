@@ -56,7 +56,7 @@
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
 |id|品类Id|varchar(32)|Y| - |
-|name|品类名称|varchar(32)|Y| - |
+|name|品类名称|varchar(20)|Y| - |
 
  - 响应示例
 ```
@@ -118,7 +118,7 @@
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
 |id|属性Id|varchar(32)|Y| - |
-|name|属性名称|varchar(32)|Y| - |
+|name|属性名称|varchar(40)|Y| - |
 |multi|是否多选|bool|Y| - |
 |rqd|是否必选|bool|N| - |
 |parentId|父级|varchar(32)|N| - |
@@ -129,10 +129,10 @@
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
 |id|属性值Id|varchar(32)|Y| - |
-|name|属性值名称|varchar(32)|Y| - |
+|name|属性值名称|varchar(40)|Y| - |
 |dft|是否默认选中|bool|Y| - |
 |parentId|属性值父级|varchar(32)|Y| - |
-|extend|扩展信息|Map|Y|目前在笔记本估价专用|
+|extend|扩展信息| {} |Y|目前在笔记本估价专用|
 
  - 响应示例
 ```
@@ -170,7 +170,7 @@
 |:----|:----|:---| :--: |:-:|:---------|
 |propId|属性Id|varchar(32)|Y| - |
 |optionId|属性值Id|[]|Y| - |
-|extend|扩展信息|Map|N|目前在笔记本估价专用|
+|extend|扩展信息| {} |N|目前在笔记本估价专用|
 
  - 请求示例:
 ```
@@ -217,12 +217,12 @@
 |:----|:----|:---| :--: |:-:|:---------|
 |price|估价价格|Long|Y| 单位:分 |
 |categoryId|品类Id|varchar(32)|Y| - |
-|categoryName|品类名称|varchar(32)|Y| - |
+|categoryName|品类名称|varchar(20)|Y| - |
 |brandId|品类Id|varchar(32)|Y| - |
-|brandName|品类名称|varchar(32)|Y| - |
+|brandName|品类名称|varchar(20)|Y| - |
 |productId|产品Id|varchar(32)|Y| - |
-|productName|产品名称|varchar(32)|Y| - |
-|productImg|产品图片链接|varchar(32)|Y| - |
+|productName|产品名称|varchar(20)|Y| - |
+|productImg|产品图片链接|varchar(100)|Y| - |
 |valuingPropList|估价的属性| [{}] |Y| - |
 
 ####valuingPropList
@@ -230,11 +230,11 @@
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
 |propId|属性Id|Long|Y|单位:分|
-|prop|属性名称|varchar(32)|Y| - |
-|multi|是否多选|varchar(32)|Y| - |
+|prop|属性名称|varchar(40)|Y| - |
+|multi|是否多选|bool|Y| - |
 |optionId|属性值|[]|Y| - |
 |option|属性值名称|[]|Y| - | 
-|extend|扩展信息|Map|N|目前在笔记本估价专用| 
+|extend|扩展信息| {} |N|目前在笔记本估价专用| 
 
  - 响应示例:
 ```
