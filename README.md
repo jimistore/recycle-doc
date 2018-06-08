@@ -1,11 +1,11 @@
-# 回收估价模型接口文档
+# 回收估价模型 - 接口文档
 ## 1对接时序图
 ![时序图](img/seq.png)
 
 ## 2说明与约定
-### 2.1签名算法
-为确保接口访问安全，接口的请求和响应应对所有参数使用对称加密算法做签名校验。请求和响应均在header中加入签名参数。
-Header参数:
+### 2.1 - 签名算法
+为确保 - 接口访问安全， - 接口的请求和响应应对所有参数使用对称加密算法做签名校验。请求和响应均在header中加入签名参数。
+ - Header参数:
 
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
@@ -13,7 +13,7 @@ Header参数:
 |timestamp|时间戳|number(11)|Y|时区GMT+8以秒为单位的时间戳|
 |signature|签名|varchar(32)|Y| - |
 
-签名算法:
+ - 签名算法:
  2. 把所有参数（包括appId、secret、timestamp）的key和拼成字符串放入到数组，得到 array = ['key2=value2','key1=value1']
  3. 把数组按照ascii码进行升序排序，得到 array = ['key1=value1','key2=value2']
  3. 把数组的元素用&拼成一个字符串，得到 source = 'key1=value1&key2=value2'
@@ -25,7 +25,7 @@ Header参数:
  - 消息格式:application/json
  - 消息编码:UTF-8
 
-请求参数样例
+ - 请求参数样例
 ```
 {
   "id":"",
@@ -37,7 +37,7 @@ Header参数:
  - 消息格式:application/json
  - 消息编发:UTF-8
 
-成功响应参数结构:
+ - 成功响应参数结构:
 ```
 {
   "code":"200",
@@ -47,18 +47,18 @@ Header参数:
 }
 ```
 
-## 3接口列表
-### 3.1获取品类接口
-接口：${api_domain}/api/recycle/proxy/category/list/v1
-请求参数：无
-响应参数:
+## 3 - 接口列表
+### 3.1获取品类 - 接口
+ - 接口：${api_domain}/api/recycle/proxy/category/list/v1
+ - 请求参数：无
+ - 响应参数:
 
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
 |id|品类Id|varchar(32)|Y| - |
 |name|品类名称|varchar(32)|Y| - |
 
-响应示例
+ - 响应示例
 ```
 {
     "code": "200",
@@ -78,10 +78,10 @@ Header参数:
 }
 ``` 
 
-### 3.2品牌机型接口
-接口：https://migu.jimistore.com/api/model/{品类Id}
-请求方式：get
-响应参数:
+### 3.2品牌机型 - 接口
+ - 接口：https://migu.jimistore.com/api/model/{品类Id}
+ - 请求方式：get
+ - 响应参数:
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
 |id|品牌Id|varchar(32)|Y| - |
@@ -95,7 +95,7 @@ Header参数:
 |name|产品名称|varchar(20)|Y| - |
 |image|产品图片链接|varchar(100)|Y| - |
 
-响应示例:
+ - 响应示例:
 ```
 [{
     "id": "1_21",
@@ -108,9 +108,9 @@ Header参数:
 }]
 ```
 
-### 3.3产品属性与属性值接口
-接口：https://migu.jimistore.com/api/model/product/{产品Id}
-请求方式:get
+### 3.3产品属性与属性值 - 接口
+ - 接口：https://migu.jimistore.com/api/model/product/{产品Id}
+ - 请求方式:get
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
 |id|属性Id|varchar(32)|Y| - |
@@ -129,7 +129,7 @@ Header参数:
 |parentId|属性值父级|varchar(32)|Y| - |
 |extend|扩展信息|Map|Y|目前在笔记本估价专用|
 
-响应示例
+ - 响应示例
 ```
 [{
 	"id": "1001069",
@@ -148,9 +148,9 @@ Header参数:
 ```
 
 ### 3.4估价
-接口：${api_domain}/api/recycle/proxy/valuing/v1?_=1528278727351
-请求方式：post
-请求参数:
+ - 接口：${api_domain}/api/recycle/proxy/valuing/v1?_=1528278727351
+ - 请求方式：post
+ - 请求参数:
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
 |categoryId|品类Id|varchar(32)|Y| - |
@@ -165,7 +165,7 @@ Header参数:
 |optionId|属性值Id|[]|Y| - |
 |extend|扩展信息|Map|N|目前在笔记本估价专用|
 
-请求示例:
+ - 请求示例:
 ```
 {
 	"categoryId": "yihuigou_3",
@@ -204,7 +204,7 @@ Header参数:
 	}]
 }
 ```
-响应参数:
+ - 响应参数:
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
 |price|估价价格|Long|Y| 单位:分 |
@@ -227,7 +227,7 @@ Header参数:
 |option|属性值名称|[]|Y| - | 
 |extend|扩展信息|Map|N|目前在笔记本估价专用| 
 
-响应示例:
+ - 响应示例:
 ```
  {
     "categoryId": "yihuigou_3",
