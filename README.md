@@ -90,6 +90,7 @@ Header参数:
 |id|产品Id|String|Y|-|
 |name|产品名称|String|Y|-|
 |image|产品图片链接|String|Y|-|
+
 响应示例:
 ```
 [{
@@ -114,6 +115,7 @@ Header参数:
 |rqd|是否必选|Boolean|N|-|
 |parentId|父级|String|N|-|
 |listOptions|属性值|List|Y|-|
+
 ####listOptions
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
@@ -121,7 +123,8 @@ Header参数:
 |name|属性值名称|String|Y|-|
 |dft|是否默认选中|Boolean|Y|-|
 |parentId|属性值父级|String|Y|-|
-|extend|扩展信息|Map|Y|目前在笔记本估价专用||
+|extend|扩展信息|Map|Y|目前在笔记本估价专用|
+
 响应示例
 ```
 [{
@@ -149,12 +152,14 @@ Header参数:
 |brandId|品牌Id|String|Y|-|
 |productId|产品Id|String|Y|-|
 |businessPropList|属性与属性值信息|List|Y|-|
+
 ####businessPropList
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
 |propId|属性Id|String|Y|-|
 |optionId|属性值Id|String[]|Y|-|
 |extend|扩展信息|Map|N|目前在笔记本估价专用|
+
 请求示例:
 ```
 {
@@ -206,6 +211,7 @@ Header参数:
 |productName|产品名称|String|Y|-|
 |productImg|产品图片链接|String|Y|-|
 |valuingPropList|估价的属性|List|Y|-|
+
 ####valuingPropList
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
@@ -215,6 +221,7 @@ Header参数:
 |optionId|属性值|String[]|Y||
 |option|属性值名称|String[]|Y|| 
 |extend|扩展信息|Map|N|目前在笔记本估价专用| 
+
 响应示例:
 ```
  {
