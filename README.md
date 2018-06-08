@@ -1,21 +1,24 @@
 # 回收估价模型接口文档
-
-## 说明与约定
-###1.1签名算法
+## 1对接时序图
+![时序图](img/seq.png)
+## 2说明与约定
+### 2.1签名算法
 为确保接口访问安全，接口的请求和响应应对所有参数使用对称加密算法做签名校验。请求和响应均在header中加入签名参数。
 Header参数:
+
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
 |appId|应用唯一标识|String|Y|蜜估提供|
 |timestamp|时间戳|String|Y|时区GMT+8以秒为单位的时间戳|
 |signature|签名|String|Y|-|
+
 签名算法:
- 1. 把所有参数（包括appId、secret、timestamp）的key和拼成字符串放入到数组，得到 array = ['key2=value2','key1=value1']
- 2. 把数组按照ascii码进行升序排序，得到 array = ['key1=value1','key2=value2']
+ 2. 把所有参数（包括appId、secret、timestamp）的key和拼成字符串放入到数组，得到 array = ['key2=value2','key1=value1']
+ 3. 把数组按照ascii码进行升序排序，得到 array = ['key1=value1','key2=value2']
  3. 把数组的元素用&拼成一个字符串，得到 source = 'key1=value1&key2=value2'
  4. 根据step3得到的source生成MD5加密值，并转成大写，生成签名。sign=toUpperCase(Md5(source))
 
-###1.2请求约定
+### 2.2请求约定
  - 接口协议:https
  - 请求方式:post
  - 消息格式:application/json
@@ -28,7 +31,7 @@ Header参数:
   "age":""
 }
 ```
-###1.3响应
+### 2.3响应
  - 消息格式:application/json
  - 消息编发:UTF-8
 
@@ -41,8 +44,8 @@ Header参数:
   }
 }
 ```
-## 接口列表
-###2.1获取品类接口
+## 3接口列表
+### 3.1获取品类接口
 接口：${api_domain}/api/recycle/proxy/category/list/v1
 请求参数：无
 响应参数:
@@ -69,7 +72,7 @@ Header参数:
 	}]
 }
 ```
-###2.2品牌机型接口
+### 3.2品牌机型接口
 接口：https://migu.jimistore.com/api/model/{品类Id}
 请求方式：get
 响应参数:
@@ -98,7 +101,7 @@ Header参数:
 }]
 ```
 
-###2.3产品属性与属性值接口
+### 3.3产品属性与属性值接口
 接口：https://migu.jimistore.com/api/model/product/{产品Id}
 请求方式:get
 |参数名|中文含义|类型|是否必填|备注|
@@ -134,7 +137,7 @@ Header参数:
 	}]
 }]
 ```
-###2.4估价
+### 3.4估价
 接口：${api_domain}/api/recycle/proxy/valuing/v1?_=1528278727351
 请求方式：post
 请求参数:
