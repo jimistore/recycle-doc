@@ -82,13 +82,15 @@
  - 接口：https://migu.jimistore.com/api/model/{品类Id}
  - 请求方式：get
  - 响应参数:
+ 
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
 |id|品牌Id|varchar(32)|Y| - |
 |name|品牌名称|varchar(20)|Y| - |
-|listproduct|该品牌下的所有机型|[{}]|Y| - |
+|listproduct|该品牌下的所有机型| [{}] |Y| - |
 
 ####listproduct
+
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
 |id|产品Id|varchar(32)|Y| - |
@@ -111,6 +113,8 @@
 ### 3.3产品属性与属性值 - 接口
  - 接口：https://migu.jimistore.com/api/model/product/{产品Id}
  - 请求方式:get
+ - 请求参数: 
+ 
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
 |id|属性Id|varchar(32)|Y| - |
@@ -118,9 +122,10 @@
 |multi|是否多选|bool|Y| - |
 |rqd|是否必选|bool|N| - |
 |parentId|父级|varchar(32)|N| - |
-|listOptions|属性值|[{}]|Y| - |
+|listOptions|属性值| [{}] |Y| - |
 
 ####listOptions
+
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
 |id|属性值Id|varchar(32)|Y| - |
@@ -151,14 +156,16 @@
  - 接口：${api_domain}/api/recycle/proxy/valuing/v1?_=1528278727351
  - 请求方式：post
  - 请求参数:
+ 
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
 |categoryId|品类Id|varchar(32)|Y| - |
 |brandId|品牌Id|varchar(32)|Y| - |
 |productId|产品Id|varchar(32)|Y| - |
-|businessPropList|属性与属性值信息|[{}]|Y| - |
+|businessPropList|属性与属性值信息| [{}] |Y| - |
 
 ####businessPropList
+
 |参数名|中文含义|类型|是否必填|备注|
 |:----|:----|:---| :--: |:-:|:---------|
 |propId|属性Id|varchar(32)|Y| - |
@@ -215,7 +222,7 @@
 |productId|产品Id|varchar(32)|Y| - |
 |productName|产品名称|varchar(32)|Y| - |
 |productImg|产品图片链接|varchar(32)|Y| - |
-|valuingPropList|估价的属性|List|Y| - |
+|valuingPropList|估价的属性| [{}] |Y| - |
 
 ####valuingPropList
 |参数名|中文含义|类型|是否必填|备注|
