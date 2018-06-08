@@ -1,43 +1,43 @@
-# Ìá¹©¸øµÚÈı·½
+# æä¾›ç»™ç¬¬ä¸‰æ–¹
 
-±êÇ© £º Ìá¹©¸øµÚÈı·½ÃÛ¹À½Ó¿Ú
+æ ‡ç­¾ ï¼š æä¾›ç»™ç¬¬ä¸‰æ–¹èœœä¼°æ¥å£
 
 ---
-#1.ÃÛ¹ÀÏà¹Ø¹À¼Û½Ó¿Ú
+#1.èœœä¼°ç›¸å…³ä¼°ä»·æ¥å£
 
-###1.1Ç©ÃûËã·¨
-ÎªÈ·±£½Ó¿Ú·ÃÎÊ°²È«£¬½Ó¿ÚµÄÇëÇóºÍÏìÓ¦Ó¦¶ÔËùÓĞ²ÎÊıÊ¹ÓÃ¶Ô³Æ¼ÓÃÜËã·¨×öÇ©ÃûĞ£Ñé¡£ÇëÇóºÍÏìÓ¦¾ùÔÚheaderÖĞ¼ÓÈëÇ©Ãû²ÎÊı¡£
-Header²ÎÊı:
-|²ÎÊıÃû|ÖĞÎÄº¬Òå|ÀàĞÍ|ÊÇ·ñ±ØÌî|±¸×¢|
+###1.1ç­¾åç®—æ³•
+ä¸ºç¡®ä¿æ¥å£è®¿é—®å®‰å…¨ï¼Œæ¥å£çš„è¯·æ±‚å’Œå“åº”åº”å¯¹æ‰€æœ‰å‚æ•°ä½¿ç”¨å¯¹ç§°åŠ å¯†ç®—æ³•åšç­¾åæ ¡éªŒã€‚è¯·æ±‚å’Œå“åº”å‡åœ¨headerä¸­åŠ å…¥ç­¾åå‚æ•°ã€‚
+Headerå‚æ•°:
+|å‚æ•°å|ä¸­æ–‡å«ä¹‰|ç±»å‹|æ˜¯å¦å¿…å¡«|å¤‡æ³¨|
 |:----|:----|:---| :--: |:-:|:---------|
-|appId|Ó¦ÓÃÎ¨Ò»±êÊ¶|String|Y|ÃÛ¹ÀÌá¹©| |
-|timestamp|Ê±¼ä´Á|String|Y|Ê±ÇøGMT+8ÒÔÃëÎªµ¥Î»µÄÊ±¼ä´Á| |
-|signature|Ç©Ãû|String|Y|| |
-Ç©ÃûËã·¨:
- 1. °ÑËùÓĞ²ÎÊı£¨°üÀ¨appId¡¢secret¡¢timestamp£©µÄkeyºÍÆ´³É×Ö·û´®·ÅÈëµ½Êı×é£¬µÃµ½ array = ['key2=value2','key1=value1']
- 2. °ÑÊı×é°´ÕÕasciiÂë½øĞĞÉıĞòÅÅĞò£¬µÃµ½ array = ['key1=value1','key2=value2']
- 3. °ÑÊı×éµÄÔªËØÓÃ&Æ´³ÉÒ»¸ö×Ö·û´®£¬µÃµ½ source = 'key1=value1&key2=value2'
- 4. ¸ù¾İstep3µÃµ½µÄsourceÉú³ÉMD5¼ÓÃÜÖµ£¬²¢×ª³É´óĞ´£¬Éú³ÉÇ©Ãû¡£sign=toUpperCase(Md5(source))
+|appId|åº”ç”¨å”¯ä¸€æ ‡è¯†|String|Y|èœœä¼°æä¾›| |
+|timestamp|æ—¶é—´æˆ³|String|Y|æ—¶åŒºGMT+8ä»¥ç§’ä¸ºå•ä½çš„æ—¶é—´æˆ³| |
+|signature|ç­¾å|String|Y|| |
+ç­¾åç®—æ³•:
+ 1. æŠŠæ‰€æœ‰å‚æ•°ï¼ˆåŒ…æ‹¬appIdã€secretã€timestampï¼‰çš„keyå’Œæ‹¼æˆå­—ç¬¦ä¸²æ”¾å…¥åˆ°æ•°ç»„ï¼Œå¾—åˆ° array = ['key2=value2','key1=value1']
+ 2. æŠŠæ•°ç»„æŒ‰ç…§asciiç è¿›è¡Œå‡åºæ’åºï¼Œå¾—åˆ° array = ['key1=value1','key2=value2']
+ 3. æŠŠæ•°ç»„çš„å…ƒç´ ç”¨&æ‹¼æˆä¸€ä¸ªå­—ç¬¦ä¸²ï¼Œå¾—åˆ° source = 'key1=value1&key2=value2'
+ 4. æ ¹æ®step3å¾—åˆ°çš„sourceç”ŸæˆMD5åŠ å¯†å€¼ï¼Œå¹¶è½¬æˆå¤§å†™ï¼Œç”Ÿæˆç­¾åã€‚sign=toUpperCase(Md5(source))
 
-###1.2ÇëÇóÔ¼¶¨
+###1.2è¯·æ±‚çº¦å®š
  - ${api_domain} = recycle-api.jimistore.com
- - ½Ó¿ÚĞ­Òé:https
- - ÇëÇó·½Ê½:post
- - ÏûÏ¢¸ñÊ½:application/json
- - ÏûÏ¢±àÂë:UTF-8
+ - æ¥å£åè®®:https
+ - è¯·æ±‚æ–¹å¼:post
+ - æ¶ˆæ¯æ ¼å¼:application/json
+ - æ¶ˆæ¯ç¼–ç :UTF-8
 
-ÇëÇó²ÎÊıÑùÀı
+è¯·æ±‚å‚æ•°æ ·ä¾‹
 
     {
       "id":"",
       "age":""
     }
 
-###1.3ÏìÓ¦
- - ÏûÏ¢¸ñÊ½:application/json
- - ÏûÏ¢±à·¢:UTF-8
+###1.3å“åº”
+ - æ¶ˆæ¯æ ¼å¼:application/json
+ - æ¶ˆæ¯ç¼–å‘:UTF-8
 
-³É¹¦ÏìÓ¦²ÎÊı½á¹¹:
+æˆåŠŸå“åº”å‚æ•°ç»“æ„:
 
     {
       "code":"200",
@@ -46,114 +46,114 @@ Header²ÎÊı:
       }
     }
 
-###1.4»ñÈ¡Æ·Àà½Ó¿Ú
-½Ó¿Ú£º${api_domain}/api/recycle/proxy/category/list/v1
-ÇëÇó²ÎÊı£ºÎŞ
-ÏìÓ¦²ÎÊı:
-|²ÎÊıÃû|ÖĞÎÄº¬Òå|ÀàĞÍ|ÊÇ·ñ±ØÌî|±¸×¢|
+###1.4è·å–å“ç±»æ¥å£
+æ¥å£ï¼š${api_domain}/api/recycle/proxy/category/list/v1
+è¯·æ±‚å‚æ•°ï¼šæ— 
+å“åº”å‚æ•°:
+|å‚æ•°å|ä¸­æ–‡å«ä¹‰|ç±»å‹|æ˜¯å¦å¿…å¡«|å¤‡æ³¨|
 |:----|:----|:---| :--: |:-:|:---------|
-|id|Æ·ÀàId|String|Y|| |
-|name|Æ·ÀàÃû³Æ|String|Y|| |
-ÏìÓ¦Ê¾Àı
+|id|å“ç±»Id|String|Y|| |
+|name|å“ç±»åç§°|String|Y|| |
+å“åº”ç¤ºä¾‹
 
     {
 	    "code": "200",
     	"data": [{
     		"id": "yihuigou_1",
-    		"name": "ÊÖ»ú"
+    		"name": "æ‰‹æœº"
     	}, {
     		"id": "yihuigou_2",
-    		"name": "Æ½°å"
+    		"name": "å¹³æ¿"
     	}, {
     		"id": "yihuigou_3",
-    		"name": "±Ê¼Ç±¾"
+    		"name": "ç¬”è®°æœ¬"
     	}, {
     		"id": "yihuigou_5",
-    		"name": "ÊıÂë/ÊÖ±í"
+    		"name": "æ•°ç /æ‰‹è¡¨"
     	}]
     }
 
-###1.5Æ·ÅÆ»úĞÍ½Ó¿Ú
-½Ó¿Ú£ºhttps://migu.jimistore.com/api/model/{Æ·ÀàId}
-ÇëÇó·½Ê½£ºget
-ÏìÓ¦²ÎÊı:
-|²ÎÊıÃû|ÖĞÎÄº¬Òå|ÀàĞÍ|ÊÇ·ñ±ØÌî|±¸×¢|
+###1.5å“ç‰Œæœºå‹æ¥å£
+æ¥å£ï¼šhttps://migu.jimistore.com/api/model/{å“ç±»Id}
+è¯·æ±‚æ–¹å¼ï¼šget
+å“åº”å‚æ•°:
+|å‚æ•°å|ä¸­æ–‡å«ä¹‰|ç±»å‹|æ˜¯å¦å¿…å¡«|å¤‡æ³¨|
 |:----|:----|:---| :--: |:-:|:---------|
-|id|Æ·ÅÆId|String|Y|| |
-|name|Æ·ÅÆÃû³Æ|String|Y|| |
-|listproduct|¸ÃÆ·ÅÆÏÂµÄËùÓĞ»úĞÍ|List|Y|| |
+|id|å“ç‰ŒId|String|Y|| |
+|name|å“ç‰Œåç§°|String|Y|| |
+|listproduct|è¯¥å“ç‰Œä¸‹çš„æ‰€æœ‰æœºå‹|List|Y|| |
 
 ####listproduct
-|²ÎÊıÃû|ÖĞÎÄº¬Òå|ÀàĞÍ|ÊÇ·ñ±ØÌî|±¸×¢|
+|å‚æ•°å|ä¸­æ–‡å«ä¹‰|ç±»å‹|æ˜¯å¦å¿…å¡«|å¤‡æ³¨|
 |:----|:----|:---| :--: |:-:|:---------|
-|id|²úÆ·Id|String|Y|| |
-|name|²úÆ·Ãû³Æ|String|Y|| |
-|image|²úÆ·Í¼Æ¬Á´½Ó|String|Y|| |
-ÏìÓ¦Ê¾Àı:
+|id|äº§å“Id|String|Y|| |
+|name|äº§å“åç§°|String|Y|| |
+|image|äº§å“å›¾ç‰‡é“¾æ¥|String|Y|| |
+å“åº”ç¤ºä¾‹:
 
     [{
         "id": "1_21",
-        "name": "Åµ»ùÑÇ",
+        "name": "è¯ºåŸºäºš",
         "listproduct": [{
         	"id": "5190",
-        	"name": "Åµ»ùÑÇ 6£¨TA-1000/È«ÍøÍ¨/64G£©",
+        	"name": "è¯ºåŸºäºš 6ï¼ˆTA-1000/å…¨ç½‘é€š/64Gï¼‰",
         	"image": "http://www.ehuigou.com/Public/Uploads/pic/phone/nokia_6.jpg"
         }]
 	}]
 
 
-###1.6²úÆ·ÊôĞÔÓëÊôĞÔÖµ½Ó¿Ú
-½Ó¿Ú£ºhttps://migu.jimistore.com/api/model/product/{²úÆ·Id}
-ÇëÇó·½Ê½:get
-|²ÎÊıÃû|ÖĞÎÄº¬Òå|ÀàĞÍ|ÊÇ·ñ±ØÌî|±¸×¢|
+###1.6äº§å“å±æ€§ä¸å±æ€§å€¼æ¥å£
+æ¥å£ï¼šhttps://migu.jimistore.com/api/model/product/{äº§å“Id}
+è¯·æ±‚æ–¹å¼:get
+|å‚æ•°å|ä¸­æ–‡å«ä¹‰|ç±»å‹|æ˜¯å¦å¿…å¡«|å¤‡æ³¨|
 |:----|:----|:---| :--: |:-:|:---------|
-|id|ÊôĞÔId|String|Y|| |
-|name|ÊôĞÔÃû³Æ|String|Y|| |
-|multi|ÊÇ·ñ¶àÑ¡|Boolean|Y|| |
-|rqd|ÊÇ·ñ±ØÑ¡|Boolean|N|| |
-|parentId|¸¸¼¶|String|N|| |
-|listOptions|ÊôĞÔÖµ|List|Y|| |
+|id|å±æ€§Id|String|Y|| |
+|name|å±æ€§åç§°|String|Y|| |
+|multi|æ˜¯å¦å¤šé€‰|Boolean|Y|| |
+|rqd|æ˜¯å¦å¿…é€‰|Boolean|N|| |
+|parentId|çˆ¶çº§|String|N|| |
+|listOptions|å±æ€§å€¼|List|Y|| |
 ####listOptions
-|²ÎÊıÃû|ÖĞÎÄº¬Òå|ÀàĞÍ|ÊÇ·ñ±ØÌî|±¸×¢|
+|å‚æ•°å|ä¸­æ–‡å«ä¹‰|ç±»å‹|æ˜¯å¦å¿…å¡«|å¤‡æ³¨|
 |:----|:----|:---| :--: |:-:|:---------|
-|id|ÊôĞÔÖµId|String|Y|| |
-|name|ÊôĞÔÖµÃû³Æ|String|Y|| |
-|dft|ÊÇ·ñÄ¬ÈÏÑ¡ÖĞ|Boolean|Y|| |
-|parentId|ÊôĞÔÖµ¸¸¼¶|String|Y|| |
-|extend|À©Õ¹ĞÅÏ¢|Map|Y|Ä¿Ç°ÔÚ±Ê¼Ç±¾¹À¼Û×¨ÓÃ||
-ÏìÓ¦Ê¾Àı
+|id|å±æ€§å€¼Id|String|Y|| |
+|name|å±æ€§å€¼åç§°|String|Y|| |
+|dft|æ˜¯å¦é»˜è®¤é€‰ä¸­|Boolean|Y|| |
+|parentId|å±æ€§å€¼çˆ¶çº§|String|Y|| |
+|extend|æ‰©å±•ä¿¡æ¯|Map|Y|ç›®å‰åœ¨ç¬”è®°æœ¬ä¼°ä»·ä¸“ç”¨||
+å“åº”ç¤ºä¾‹
 
     [{
 	"id": "1001069",
-	"name": "¹ºÂòÇşµÀ",
+	"name": "è´­ä¹°æ¸ é“",
 	"multi": false,
 	"listOptions": [{
 		"id": "10493",
-		"name": "´óÂ½¹úĞĞ",
+		"name": "å¤§é™†å›½è¡Œ",
 		"dft": false
 	}, {
 		"id": "10494",
-		"name": "Ïã¸ÛĞĞ»õ",
+		"name": "é¦™æ¸¯è¡Œè´§",
 		"dft": false
 	}]
 }]
-###1.7¹À¼Û
-½Ó¿Ú£º${api_domain}/api/recycle/proxy/valuing/v1?_=1528278727351
-ÇëÇó·½Ê½£ºpost
-ÇëÇó²ÎÊı:
-|²ÎÊıÃû|ÖĞÎÄº¬Òå|ÀàĞÍ|ÊÇ·ñ±ØÌî|±¸×¢|
+###1.7ä¼°ä»·
+æ¥å£ï¼š${api_domain}/api/recycle/proxy/valuing/v1?_=1528278727351
+è¯·æ±‚æ–¹å¼ï¼špost
+è¯·æ±‚å‚æ•°:
+|å‚æ•°å|ä¸­æ–‡å«ä¹‰|ç±»å‹|æ˜¯å¦å¿…å¡«|å¤‡æ³¨|
 |:----|:----|:---| :--: |:-:|:---------|
-|categoryId|Æ·ÀàId|String|Y|| |
-|brandId|Æ·ÅÆId|String|Y|| |
-|productId|²úÆ·Id|String|Y|| |
-|businessPropList|ÊôĞÔÓëÊôĞÔÖµĞÅÏ¢|List|Y|| |
+|categoryId|å“ç±»Id|String|Y|| |
+|brandId|å“ç‰ŒId|String|Y|| |
+|productId|äº§å“Id|String|Y|| |
+|businessPropList|å±æ€§ä¸å±æ€§å€¼ä¿¡æ¯|List|Y|| |
 ####businessPropList
-|²ÎÊıÃû|ÖĞÎÄº¬Òå|ÀàĞÍ|ÊÇ·ñ±ØÌî|±¸×¢|
+|å‚æ•°å|ä¸­æ–‡å«ä¹‰|ç±»å‹|æ˜¯å¦å¿…å¡«|å¤‡æ³¨|
 |:----|:----|:---| :--: |:-:|:---------|
-|propId|ÊôĞÔId|String|Y|| |
-|optionId|ÊôĞÔÖµId|String[]|Y|| |
-|extend|À©Õ¹ĞÅÏ¢|Map|N|Ä¿Ç°ÔÚ±Ê¼Ç±¾¹À¼Û×¨ÓÃ| |
-ÇëÇóÊ¾Àı:
+|propId|å±æ€§Id|String|Y|| |
+|optionId|å±æ€§å€¼Id|String[]|Y|| |
+|extend|æ‰©å±•ä¿¡æ¯|Map|N|ç›®å‰åœ¨ç¬”è®°æœ¬ä¼°ä»·ä¸“ç”¨| |
+è¯·æ±‚ç¤ºä¾‹:
 
     {
 	"categoryId": "yihuigou_3",
@@ -163,16 +163,16 @@ Header²ÎÊı:
 		"propId": "5262_ConfModel",
 		"optionId": ["124"],
 		"extend": {
-			"confMemory": "16GB£¨16GB¡Á1£©",
+			"confMemory": "16GBï¼ˆ16GBÃ—1ï¼‰",
 			"confConfig": 1,
-			"confModel": "Æ»¹û 2016Äê ĞÂ¿îMacbook Pro 15Ó¢´ç£¨MLH32CH/A£©",
+			"confModel": "è‹¹æœ 2016å¹´ æ–°æ¬¾Macbook Pro 15è‹±å¯¸ï¼ˆMLH32CH/Aï¼‰",
 			"confHarddisk": "256GB",
-			"confColor": "Ã¾ÂÁºÏ½ğ£¬ÒøÉ«£¬Éî¿Õ»ÒÉ«",
-			"confCamera": "720p FaceTime HDÉãÏñÍ·",
-			"confProce": "Intel ¿áî£i7 6700HQ",
-			"confScreen": "15.4Ó¢´ç",
-			"confCard": "Ë«ÏÔ¿¨£¨ÈëÃÅ¼¶¶ÀÁ¢ÏÔ¿¨£«¼¯³ÉÏÔ¿¨£©",
-			"confDrive": "ÎŞÄÚÖÃ¹âÇı"
+			"confColor": "é•é“åˆé‡‘ï¼Œé“¶è‰²ï¼Œæ·±ç©ºç°è‰²",
+			"confCamera": "720p FaceTime HDæ‘„åƒå¤´",
+			"confProce": "Intel é…·ç¿i7 6700HQ",
+			"confScreen": "15.4è‹±å¯¸",
+			"confCard": "åŒæ˜¾å¡ï¼ˆå…¥é—¨çº§ç‹¬ç«‹æ˜¾å¡ï¼‹é›†æˆæ˜¾å¡ï¼‰",
+			"confDrive": "æ— å†…ç½®å…‰é©±"
 		}
 	}, {
 		"propId": "6055",
@@ -191,28 +191,28 @@ Header²ÎÊı:
 		"optionId": ["16925"]
 	}]
 }
-ÏìÓ¦²ÎÊı:
-|²ÎÊıÃû|ÖĞÎÄº¬Òå|ÀàĞÍ|ÊÇ·ñ±ØÌî|±¸×¢|
+å“åº”å‚æ•°:
+|å‚æ•°å|ä¸­æ–‡å«ä¹‰|ç±»å‹|æ˜¯å¦å¿…å¡«|å¤‡æ³¨|
 |:----|:----|:---| :--: |:-:|:---------|
-|price|¹À¼Û¼Û¸ñ|Long|Y|µ¥Î»:·Ö| |
-|categoryId|Æ·ÀàId|String|Y|| |
-|categoryName|Æ·ÀàÃû³Æ|String|Y|| |
-|brandId|Æ·ÀàId|String|Y|| |
-|brandName|Æ·ÀàÃû³Æ|String|Y|| |
-|productId|²úÆ·Id|String|Y|| |
-|productName|²úÆ·Ãû³Æ|String|Y|| |
-|productImg|²úÆ·Í¼Æ¬Á´½Ó|String|Y|| |
-|valuingPropList|¹À¼ÛµÄÊôĞÔ|List|Y|| |
+|price|ä¼°ä»·ä»·æ ¼|Long|Y|å•ä½:åˆ†| |
+|categoryId|å“ç±»Id|String|Y|| |
+|categoryName|å“ç±»åç§°|String|Y|| |
+|brandId|å“ç±»Id|String|Y|| |
+|brandName|å“ç±»åç§°|String|Y|| |
+|productId|äº§å“Id|String|Y|| |
+|productName|äº§å“åç§°|String|Y|| |
+|productImg|äº§å“å›¾ç‰‡é“¾æ¥|String|Y|| |
+|valuingPropList|ä¼°ä»·çš„å±æ€§|List|Y|| |
 ####valuingPropList
-|²ÎÊıÃû|ÖĞÎÄº¬Òå|ÀàĞÍ|ÊÇ·ñ±ØÌî|±¸×¢|
+|å‚æ•°å|ä¸­æ–‡å«ä¹‰|ç±»å‹|æ˜¯å¦å¿…å¡«|å¤‡æ³¨|
 |:----|:----|:---| :--: |:-:|:---------|
-|propId|ÊôĞÔId|Long|Y|µ¥Î»:·Ö| |
-|prop|ÊôĞÔÃû³Æ|String|Y|| |
-|multi|ÊÇ·ñ¶àÑ¡|String|Y|| |
-|optionId|ÊôĞÔÖµ|String[]|Y|| |
-|option|ÊôĞÔÖµÃû³Æ|String[]|Y|| |
-|extend|À©Õ¹ĞÅÏ¢|Map|N|Ä¿Ç°ÔÚ±Ê¼Ç±¾¹À¼Û×¨ÓÃ| |
-ÏìÓ¦Ê¾Àı:
+|propId|å±æ€§Id|Long|Y|å•ä½:åˆ†| |
+|prop|å±æ€§åç§°|String|Y|| |
+|multi|æ˜¯å¦å¤šé€‰|String|Y|| |
+|optionId|å±æ€§å€¼|String[]|Y|| |
+|option|å±æ€§å€¼åç§°|String[]|Y|| |
+|extend|æ‰©å±•ä¿¡æ¯|Map|N|ç›®å‰åœ¨ç¬”è®°æœ¬ä¼°ä»·ä¸“ç”¨| |
+å“åº”ç¤ºä¾‹:
 
      {
         "categoryId": "yihuigou_3",
@@ -221,44 +221,44 @@ Header²ÎÊı:
         "businessPropList": [{
         	"propId": "5262_ConfModel",
         	"optionId": ["124"],
-        	"optionName": ["£¨MLH32CH/A£©"],
+        	"optionName": ["ï¼ˆMLH32CH/Aï¼‰"],
         	"multi": false,
         	"extend": {
-        		"confMemory": "16GB£¨16GB¡Á1£©",
+        		"confMemory": "16GBï¼ˆ16GBÃ—1ï¼‰",
         		"confConfig": 1,
-        		"confModel": "Æ»¹û 2016Äê ĞÂ¿îMacbook Pro 15Ó¢´ç£¨MLH32CH/A£©",
+        		"confModel": "è‹¹æœ 2016å¹´ æ–°æ¬¾Macbook Pro 15è‹±å¯¸ï¼ˆMLH32CH/Aï¼‰",
         		"confHarddisk": "256GB",
-        		"confColor": "Ã¾ÂÁºÏ½ğ£¬ÒøÉ«£¬Éî¿Õ»ÒÉ«",
-        		"confCamera": "720p FaceTime HDÉãÏñÍ·",
-        		"confProce": "Intel ¿áî£i7 6700HQ",
-        		"confScreen": "15.4Ó¢´ç",
-        		"confCard": "Ë«ÏÔ¿¨£¨ÈëÃÅ¼¶¶ÀÁ¢ÏÔ¿¨£«¼¯³ÉÏÔ¿¨£©",
-        		"confDrive": "ÎŞÄÚÖÃ¹âÇı"
+        		"confColor": "é•é“åˆé‡‘ï¼Œé“¶è‰²ï¼Œæ·±ç©ºç°è‰²",
+        		"confCamera": "720p FaceTime HDæ‘„åƒå¤´",
+        		"confProce": "Intel é…·ç¿i7 6700HQ",
+        		"confScreen": "15.4è‹±å¯¸",
+        		"confCard": "åŒæ˜¾å¡ï¼ˆå…¥é—¨çº§ç‹¬ç«‹æ˜¾å¡ï¼‹é›†æˆæ˜¾å¡ï¼‰",
+        		"confDrive": "æ— å†…ç½®å…‰é©±"
         	}
         }, {
         	"propId": "6055",
         	"optionId": ["16928"],
-        	"optionName": ["¿ª»úÔËĞĞÕı³£"],
+        	"optionName": ["å¼€æœºè¿è¡Œæ­£å¸¸"],
         	"multi": false
         }, {
         	"propId": "6056",
         	"optionId": ["16930"],
-        	"optionName": ["Íâ¿ÇÍêºÃ"],
+        	"optionName": ["å¤–å£³å®Œå¥½"],
         	"multi": false
         }, {
         	"propId": "6057",
         	"optionId": ["16931"],
-        	"optionName": ["ÆÁÄ»Íâ¹ÛÍêºÃ"],
+        	"optionName": ["å±å¹•å¤–è§‚å®Œå¥½"],
         	"multi": false
         }, {
         	"propId": "6058",
         	"optionId": ["16932"],
-        	"optionName": ["ÆÁÄ»ÏÔÊ¾Õı³£"],
+        	"optionName": ["å±å¹•æ˜¾ç¤ºæ­£å¸¸"],
         	"multi": false
         }, {
         	"propId": "6059",
         	"optionId": ["16925"],
-        	"optionName": ["¼üÅÌÍâ¹Û/¹¦ÄÜÒì³£"],
+        	"optionName": ["é”®ç›˜å¤–è§‚/åŠŸèƒ½å¼‚å¸¸"],
         	"multi": true
         }],
         "channelId": "h5"
