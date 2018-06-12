@@ -29,7 +29,7 @@
  - 请求方式:post
  - 消息格式:application/json
  - 消息编码:UTF-8
-
+ 
  - 请求参数样例
 ```
 {
