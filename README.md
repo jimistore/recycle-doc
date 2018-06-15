@@ -4,7 +4,7 @@
 
 ---
 # 回收估价模型 - 接口文档
-## 1对接时序图
+## 1对接时序图 
 ![时序图](img/seq.png)
 
 ## 2说明与约定
@@ -54,7 +54,7 @@
 
 ## 3 - 接口列表
 ### 3.1获取品类 - 接口
- - 接口：${api_domain}/api/recycle/proxy/category/list/v1
+ - 接口：https://migu.jimistore.com/api/model/v1/category
  - 请求参数：无
  - 响应参数:
 
@@ -67,24 +67,28 @@
 ```
 {
     "code": "200",
-	"data": [{
-        	"id": "yihuigou_1",
-        	"name": "手机"
-        }, {
-        	"id": "yihuigou_2",
-        	"name": "平板"
-        }, {
-        	"id": "yihuigou_3",
-        	"name": "笔记本"
-        }, {
-        	"id": "yihuigou_5",
-        	"name": "数码/手表"
-        }]
+    "data": [{
+            "id": "yihuigou_1",
+            "name": "手机"
+        },
+        {
+            "id": "yihuigou_2",
+            "name": "平板"
+        },
+        {
+            "id": "yihuigou_3",
+            "name": "笔记本"
+        },
+        {
+            "id": "yihuigou_5",
+            "name": "数码/手表"
+        }
+    ]
 }
 ``` 
 
 ### 3.2品牌机型 - 接口
- - 接口：https://migu.jimistore.com/api/model/{品类Id}
+ - 接口：https://migu.jimistore.com/api/model/v1/{品类Id}
  - 请求方式：get
  - 响应参数:
  
@@ -105,21 +109,21 @@
  - 响应示例:
 ```
 {
-    "code":"200",
+    "code": "200",
     "data": [{
-    "id": "1_21",
-    "name": "诺基亚",
-    "listproduct": [{
-    	"id": "5190",
-    	"name": "诺基亚 6（TA-1000/全网通/64G）",
-    	"image": "http://www.ehuigou.com/Public/Uploads/pic/phone/nokia_6.jpg"
+        "id": "1_21",
+        "name": "诺基亚",
+        "listproduct": [{
+            "id": "5190",
+            "name": "诺基亚 6（TA-1000/全网通/64G）",
+            "image": "http://www.ehuigou.com/Public/Uploads/pic/phone/nokia_6.jpg"
         }]
     }]
 }
 ```
 
 ### 3.3产品属性与属性值 - 接口
- - 接口：https://migu.jimistore.com/api/model/product/{产品Id}
+ - 接口：https://migu.jimistore.com/api/model/v1/product/{产品Id}
  - 请求方式:get
  - 响应参数: 
  
@@ -144,20 +148,20 @@
 
  - 响应示例
 ```
-{   
-    "code":"200",
+{
+    "code": "200",
     "data": [{
         "id": "1001069",
         "name": "购买渠道",
         "multi": false,
         "listOptions": [{
-        	"id": "10493",
-        	"name": "大陆国行",
-        	"dft": false
+            "id": "10493",
+            "name": "大陆国行",
+            "dft": false
         }, {
-        	"id": "10494",
-        	"name": "香港行货",
-        	"dft": false
+            "id": "10494",
+            "name": "香港行货",
+            "dft": false
         }]
     }]
 }
@@ -186,40 +190,40 @@
  - 请求示例:
 ```
 {
-	"categoryId": "yihuigou_3",
-	"brandId": "3_1",
-	"productId": "5262",
-	"businessPropList": [{
-		"propId": "5262_ConfModel",
-		"optionId": ["124"],
-		"extend": {
-			"confMemory": "16GB（16GB×1）",
-			"confConfig": 1,
-			"confModel": "苹果 2016年 新款Macbook Pro 15英寸（MLH32CH/A）",
-			"confHarddisk": "256GB",
-			"confColor": "镁铝合金，银色，深空灰色",
-			"confCamera": "720p FaceTime HD摄像头",
-			"confProce": "Intel 酷睿i7 6700HQ",
-			"confScreen": "15.4英寸",
-			"confCard": "双显卡（入门级独立显卡＋集成显卡）",
-			"confDrive": "无内置光驱"
-		}
-	}, {
-		"propId": "6055",
-		"optionId": ["16928"]
-	}, {
-		"propId": "6056",
-		"optionId": ["16930"]
-	}, {
-		"propId": "6057",
-		"optionId": ["16931"]
-	}, {
-		"propId": "6058",
-		"optionId": ["16932"]
-	}, {
-		"propId": "6059",
-		"optionId": ["16925"]
-	}]
+    "categoryId": "yihuigou_3",
+    "brandId": "3_1",
+    "productId": "5262",
+    "businessPropList": [{
+        "propId": "5262_ConfModel",
+        "optionId": ["124"],
+        "extend": {
+            "confMemory": "16GB（16GB×1）",
+            "confConfig": 1,
+            "confModel": "苹果 2016年 新款Macbook Pro 15英寸（MLH32CH/A）",
+            "confHarddisk": "256GB",
+            "confColor": "镁铝合金，银色，深空灰色",
+            "confCamera": "720p FaceTime HD摄像头",
+            "confProce": "Intel 酷睿i7 6700HQ",
+            "confScreen": "15.4英寸",
+            "confCard": "双显卡（入门级独立显卡＋集成显卡）",
+            "confDrive": "无内置光驱"
+        }
+    }, {
+        "propId": "6055",
+        "optionId": ["16928"]
+    }, {
+        "propId": "6056",
+        "optionId": ["16930"]
+    }, {
+        "propId": "6057",
+        "optionId": ["16931"]
+    }, {
+        "propId": "6058",
+        "optionId": ["16932"]
+    }, {
+        "propId": "6059",
+        "optionId": ["16925"]
+    }]
 }
 ```
  - 响应参数:
