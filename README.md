@@ -168,7 +168,7 @@
 ```
 
 ### 3.4估价
- - 接口：${api_domain}/api/recycle/proxy/valuing/v1?_=1528278727351
+ - 接口：https://recycle-api.jimistore.com/api/recycle/proxy/valuing/v1?_=1528278727351
  - 请求方式：post
  - 请求参数:
  
